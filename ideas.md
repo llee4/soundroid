@@ -7,3 +7,4 @@ Add any and all ideas (simple or outlandish) that would make dealing with music 
 * Scrubbing backwards and forwards through song
 * Control the volumes of different frequencies (ex. bump the bass)
 * Create pre-made Equalizer settings and allow for creation of custom ones
+* Allowing for the same audio to be played out of both left and right speakers.
