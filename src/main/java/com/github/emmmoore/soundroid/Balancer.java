@@ -1,6 +1,10 @@
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
+/**
+* This class can set and get the tonal balancer of a media player
+*/
+
 public class Balancer {
     private MediaPlayer mp;
 
