@@ -1,4 +1,4 @@
-package com.github.emmmoore.soundroidplayer;
+package com.github.emmmoore.soundroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -14,7 +14,7 @@ import android.widget.Toast;
 /**
  *  Represents a player for a list of tracks, including basic functionalities.
  */
-public class SoundroidPlayer {
+public class SoundroidTrack {
     /**
      * Handles the media to be played/paused etc.
      */
@@ -60,7 +60,7 @@ public class SoundroidPlayer {
     /**
      * Releases the MediaPlayer object.
      */
-    public void stopPlayer() {
+    private void stopPlayer() {
         if (player != null) {
             player.release();
             Toast.makeText(this, "player released", Toast.LENGTH_SHORT);
