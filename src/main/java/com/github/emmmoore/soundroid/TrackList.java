@@ -1,31 +1,42 @@
 package com.github.emmmoore.soundroid;
 
-import java.util.ArrayList;
-
 import com.github.emmmoore.soundroid.SoundroidTrack;
+import java.util.ArrayList;
 
 /**
  * Represents a list of tracks (such as a queue or a playlist) to be played.
  */
 public class TrackList {
-    /**
-     * The tracks in the TrackList
-     */
-    ArrayList<SoundroidTrack> trackList;
+  /**
+   * The tracks in the TrackList
+   */
+  ArrayList<SoundroidTrack> trackList;
 
-    /**
-     * Constructs an empty TrackList
-     */
-    public TrackList() {
-        trackList = new ArrayList<SoundroidTrack>();
-    }
+  /**
+   * Constructs an empty TrackList
+   */
+  public TrackList() {
+    trackList = new ArrayList<SoundroidTrack>();
+  }
 
-    /**
-     * Adds a track to the TrackList
-     * @param st
-     */
-    public void add(SoundroidTrack st) {
-        trackList.add(st);
-    }
+  /**
+   * Adds a track to the TrackList
+   * @param st
+   */
+  public void add(SoundroidTrack st) {
+    trackList.add(st);
+  }
+
+  /**
+   * Overrides the toString method
+   */
+//   @Override
+//   public String toString() {
+//     String r = "";
+//     for (SoundroidTrack st: trackList) {
+//         r += 
+//     }
+//     return r;
+//   }
 
 }

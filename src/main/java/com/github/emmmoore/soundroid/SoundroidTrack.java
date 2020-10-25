@@ -19,7 +19,27 @@ public class SoundroidTrack {
      * Handles the media to be played/paused etc.
      */
     MediaPlayer player;
+    /**
+     * The media to be dealt with
+     */
+    Media media;
 
+    /**
+     * Creates a SoundroidTrack when given a MediaPlayer
+     */
+    public SoundroidTrack(MediaPlayer mp) {
+        player = mp;
+        media = mp.getMedia();
+    }
+
+    /**
+     * Creates a SoundroidTrack when given a Media
+     * @param v
+     */
+    public SoundroidTrack(Media m) {
+        media = m;
+        player = new MediaPlayer(m);
+    }
     /**
      * Plays the media "bensound_evolution" with a MediaPlayer (either from the pausing point or
      * from the beginning), stopping the player at the song's completion.
@@ -67,4 +87,11 @@ public class SoundroidTrack {
             player = null;
         }
     }
+
+    /**
+     * Returns track's title
+     */
+    // public String getTitle() {
+        // involves looking at the Media metadata's ObservableMap
+    // }
 }
