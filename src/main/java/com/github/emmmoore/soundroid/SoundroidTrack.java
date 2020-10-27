@@ -24,6 +24,10 @@ public class SoundroidTrack {
      */
     Media media;
 
+    String title;
+    String artist;
+    String album;
+
     /**
      * Creates a SoundroidTrack when given a MediaPlayer
      * @param mp
@@ -40,6 +44,11 @@ public class SoundroidTrack {
     public SoundroidTrack(Media m) {
         media = m;
         player = new MediaPlayer(m);
+
+        ObservableMap<String, Object> metadata = m.getMetadata();
+        title = metadata.get("title");
+        artist = metadata.get("artist");
+        album = metadata.get("album");
     }
     /**
      * Plays the media "bensound_evolution" with a MediaPlayer (either from the pausing point or
@@ -92,7 +101,28 @@ public class SoundroidTrack {
     /**
      * Returns track's title
      */
-    // public String getTitle() {
-        // involves looking at the Media metadata's ObservableMap
-    // }
+    public String getTitle() {
+        return title;
+    }
+
+    /**
+     * Returns track's artist
+     */
+    public String getArtist() {
+        return artist;
+    }
+
+    /**
+     * Returns track's album
+     */
+    public String getAlbum() {
+        return album;
+    }
+
+    /**
+     * Overrides toString method
+     */
+    public String toString() {
+        return "\"" + title + "\" by " + artist + " in album " + album;
+    }
 }
