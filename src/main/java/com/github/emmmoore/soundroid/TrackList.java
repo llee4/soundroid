@@ -29,6 +29,26 @@ public class TrackList {
   }
 
   /**
+   * Removes the track at index i
+   * @param i
+   */
+  public void remove(int i) {
+    trackList.remove(i);
+  }
+
+  /**
+   * Removes all instances of a track 
+   */
+  public void remove(SoundroidTrack remSt) {
+    for (int i = 0; i < trackList.size(); i++) {
+      if (trackList.get(i).equals(remSt)) {
+        trackList.remove(i);
+        i--;
+      }
+    }
+  }
+
+  /**
    * Shuffles the TrackList 
    * (Fisher-Yates Algorithm)
    */
