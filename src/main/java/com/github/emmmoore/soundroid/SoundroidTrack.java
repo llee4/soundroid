@@ -26,6 +26,7 @@ public class SoundroidTrack {
 
     /**
      * Creates a SoundroidTrack when given a MediaPlayer
+     * @param mp
      */
     public SoundroidTrack(MediaPlayer mp) {
         player = mp;
@@ -34,7 +35,7 @@ public class SoundroidTrack {
 
     /**
      * Creates a SoundroidTrack when given a Media
-     * @param v
+     * @param m
      */
     public SoundroidTrack(Media m) {
         media = m;
