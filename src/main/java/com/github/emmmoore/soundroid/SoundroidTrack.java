@@ -122,6 +122,13 @@ public class SoundroidTrack {
   }
 
   /**
+   * Returns MediaPlayer object
+   */
+  protected MediaPlayer getMediaPlayer() {
+      return player;
+  }
+
+  /**
    * Overrides equals method
    * @param other
    */

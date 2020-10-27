@@ -37,7 +37,7 @@ public class TrackList {
   }
 
   /**
-   * Removes all instances of a track 
+   * Removes all instances of a track
    */
   public void remove(SoundroidTrack remSt) {
     for (int i = 0; i < trackList.size(); i++) {
@@ -49,7 +49,7 @@ public class TrackList {
   }
 
   /**
-   * Shuffles the TrackList 
+   * Shuffles the TrackList
    * (Fisher-Yates Algorithm)
    */
   public void shuffle() {
@@ -70,5 +70,4 @@ public class TrackList {
   public String toString() {
     return trackList.toString();
   }
-
 }
