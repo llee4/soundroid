@@ -45,4 +45,12 @@ public class Balancer {
     player.setBalance(xBalance);
   }
 
+  /**
+   * Rotates the current balance 
+   * @param th
+   */
+  public void rotateBalance(double th) {
+    xBalance *= Math.cos(th);
+    theta = th;
+  }
 }
