@@ -81,4 +81,4 @@ public class Balancer {
     
     return finalDirection;
   }//close compass method
-}//close balancer class
+}//close balancer class 
