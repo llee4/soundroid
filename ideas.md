@@ -18,4 +18,8 @@ Add any and all ideas (simple or outlandish) that would make dealing with music 
 * [jmusic](http://explodingart.com/jmusic/) is a music composition tool designed to provide a solid framework for music edition and production.
   * It can read and write MIDI, XML files, audio, and its own .jm files
   * Has a wide range of instruments (electronic synth sounds and regular instruments)
+* [beads](http://www.beadsproject.net/) seems like a useful library for you. 
+  * It can do real time audio processing. 
+  * It can analyze audio
+  * It can do real time visualization of tracks (for the visualizer feature above)
     
