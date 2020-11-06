@@ -60,8 +60,8 @@ public class Balancer {
   
    
   
-  public static float[] compass(){
-     private Sensor mAccelerometer;
+  public static float[] compass(){ //method that will return azimuth (angular distance from north) direction in both radians and degrees (return an array list)
+    private Sensor mAccelerometer;//instatiating objects available from java android sensor class
     private Sensor mMagnetometer;
     private float[] mLastAccelerometer = new float[3];
     private float[] mLastMagnetometer = new float[3];
@@ -72,11 +72,11 @@ public class Balancer {
     private float mCurrentDegree = 0f;
     private float[] finalDirection = new float [2];
     
-  SensorManager.getRotationMatrix(mR, null, mLastAccelerometer, mLastMagnetometer);
+  SensorManager.getRotationMatrix(mR, null, mLastAccelerometer, mLastMagnetometer);//getting rotation from sensor manager class
             SensorManager.getOrientation(mR, mOrientation);
             float azimuthInRadians = mOrientation[0];
             float azimuthInDegrees = (float)(Math.toDegrees(azimuthInRadians)+360)%360;
-            finalDirection[0] = azimuthInRadians;
+            finalDirection[0] = azimuthInRadians;//adding directions to "final direction" array
             finalDirection[1] = azimuthInDegrees;
     
     return finalDirection;
