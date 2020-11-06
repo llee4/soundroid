@@ -12,6 +12,7 @@ Add any and all ideas (simple or outlandish) that would make dealing with music 
 * Ability to trim/re-record sections of an audio file
 * Some sort of visualizer that chages with the music
 * Ability to add tracks from different sources (ie. Apple Music and Spotify) to the same queue
+* Attach pre-made EQ settings to identified genres of music (in other words, changing the sound based on the metadata provided by the streaming service with a fallback in case genre is not provided)
 
 # Some potentially useful libraries:
 * [jmusic](http://explodingart.com/jmusic/) is a music composition tool designed to provide a solid framework for music edition and production.

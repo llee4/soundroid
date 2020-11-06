@@ -1,35 +1,56 @@
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javax.lang.model.util.ElementScanner14;
 
 /**
-* This class can set and get the tonal balancer of a media player
-*/
+ * This class can set and get the tonal balancer of a media player
+ */
 
 public class Balancer {
-    private MediaPlayer mp;
+  /**
+   * Stores a reference to the MediaPlayer being balanced
+   */
+  MediaPlayer player;
+  /**
+   * Stores the left and right balance (not necessarily that of the left and right speaker)
+   */
+  double xBalance;
+  /**
+   * Stores the angle between the balance's right and the right speaker
+   */
+  double theta;
 
-    /**
-     * Initializes a Balancer object based on a MediaPlayer object
-     * @param mp
-     */
-    public Balancer(MediaPlayer mp) {
-        this.mp = mp;
+  /**
+   * Creates a Balancer object for a SoundroidTrack, and initializes the current balance
+   * @param st
+   */
+  public Balancer(SoundroidTrack st) {
+    player = st.getMediaPlayer();
+    balanceX = player.getBalance();
+  }
+
+  /**
+   * Sets a standard stereo balance, where 0 
+   * @param xBal
+   */
+  public void setXBalance(double xBal) {
+    if (xBal > 1) {
+      xBalance = 1;
+    } else if (xBal < -1) {
+      xBalance = -1;
+    } else {
+      xBalance = xBal;
     }
 
-    /**
-     * Sets stereo balance between left and right speakers.
-     * -1.0 corresponds to completely left and 1.0 to fully right audio.
-     * @param balance
-     */
-    public void setBalance(double balance) {
-        mp.setBalance(balance);
-    }
+    player.setBalance(xBalance);
+  }
 
-    /**
-     * Returns the stereo balance
-     */
-    public double getBalance() {
-        return mp.getBalance();
-    }
-
+  /**
+   * Rotates the current balance 
+   * @param th
+   */
+  public void rotateBalance(double th) {
+    xBalance *= Math.cos(th);
+    theta = th;
+  }
 }
