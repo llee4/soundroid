@@ -1,6 +1,10 @@
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javax.lang.model.util.ElementScanner14;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 
 /**
  * This class can set and get the tonal balancer of a media player
@@ -53,4 +57,28 @@ public class Balancer {
     xBalance *= Math.cos(th);
     theta = th;
   }
-}
+  
+   
+  
+  public static float[] compass(){ //method that will return azimuth (angular distance from north) direction in both radians and degrees (return an array list)
+    private Sensor mAccelerometer;//instatiating objects available from java android sensor class
+    private Sensor mMagnetometer;
+    private float[] mLastAccelerometer = new float[3];
+    private float[] mLastMagnetometer = new float[3];
+    private boolean mLastAccelerometerSet = false;
+    private boolean mLastMagnetometerSet = false;
+    private float[] mR = new float[9];
+    private float[] mOrientation = new float[3];
+    private float mCurrentDegree = 0f;
+    private float[] finalDirection = new float [2];
+    
+  SensorManager.getRotationMatrix(mR, null, mLastAccelerometer, mLastMagnetometer);//getting rotation from sensor manager class
+            SensorManager.getOrientation(mR, mOrientation);
+            float azimuthInRadians = mOrientation[0];
+            float azimuthInDegrees = (float)(Math.toDegrees(azimuthInRadians)+360)%360;
+            finalDirection[0] = azimuthInRadians;//adding directions to "final direction" array
+            finalDirection[1] = azimuthInDegrees;
+    
+    return finalDirection;
+  }//close compass method
+}//close balancer class 
