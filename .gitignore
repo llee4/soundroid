@@ -5,3 +5,6 @@ src/main/java/.DS_Store
 src/main/java/com/.DS_Store
 src/main/java/com/github/.DS_Store
 src/main/java/com/github/emmmoore/.DS_Store
+.gradle/6.3/
+.project
+.settings/
